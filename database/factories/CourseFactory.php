@@ -37,7 +37,7 @@ class CourseFactory extends Factory
             'picture' => Image::image(storage_path() . '/app/public/courses', 600, 300, 'business', false),
             'status' => $status,
             'previous_approved' => $status !== Course::PUBLISHED ? false : true,
-            'previous_rejected' => $status !== Course::REJECTED ? true : false,
+            'previous_rejected' => $status !== Course::REJECTED,
         ];
     }
 }
