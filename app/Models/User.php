@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
+use Laravel\Cashier\Billable;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, Billable;
 
     protected static function boot(){
         parent::boot();
@@ -67,7 +68,7 @@ class User extends Authenticatable
 
     public function teacher()
     {
-        return $this->hasOne(Teacher::clas);
+        return $this->hasOne(Teacher::class);
     }
 
     public function socialAccount()

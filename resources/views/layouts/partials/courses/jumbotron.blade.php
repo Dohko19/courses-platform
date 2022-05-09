@@ -1,4 +1,4 @@
-<div class="row mb-4">
+<div class="row mb-4" style="--bs-gutter-x: 0!important;">
     <div class="col-md-12">
         <div class="card" style="background-image: url('{{ url('/images/jumbotron.png') }}');">
             <div class="py-5 px-4 my-5 d-flex align-items-center text-center text-white">
@@ -15,6 +15,7 @@
                     <h6>{{ __("Numero de valoraciones") }}: {{ $course->reviews_count }}</h6>
                     @include('layouts.partials.courses.rating', ['rating' => $course->custom_rating])
                 </div>
+                @include('layouts.partials.courses.action_button')
             </div>
         </div>
     </div>
