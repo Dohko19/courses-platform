@@ -12,6 +12,6 @@
         <p class="card-text">
             {{ \Illuminate\Support\Str::limit($course->description, 100) }}
         </p>
-        <a href="#" class="btn btn-course btn-block">Mas informacion...</a>
+        <a href="{{ route('courses.detail', $course) }}" class="btn btn-course btn-block">Mas informacion...</a>
     </div>
 </div>

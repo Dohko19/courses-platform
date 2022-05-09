@@ -17,7 +17,7 @@ class Course extends Model
 
     public function pathAttachment()
     {
-        return \Illuminate\Support\Facades\Storage::url('courses/' . $this->picture);
+        return \Illuminate\Support\Facades\Storage::url('public/courses/' . $this->picture);
     }
 
     public function getRouteKeyName()

@@ -1,8 +1,12 @@
-@extends('layouts.app)
+@extends('layouts.app')
 
 @section('jumbotron')
-
+    @include('layouts.partials.courses.jumbotron')
 @endsection
 @section('content')
+    <div class="pl-5 pr-5">
+        <div class="row justify-content-center">
 
+        </div>
+    </div>
 @endsection

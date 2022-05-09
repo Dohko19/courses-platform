@@ -23,9 +23,9 @@ class CourseController extends Controller
                 $q->select('id', 'course_id', 'requirement');
             },
             'reviews.user',
-            'teacher'
+            'teacher',
+
         ]);
-        
         $related = $course->relatedCourses();
         return view('courses.detail', compact('course', 'related'));
     }
