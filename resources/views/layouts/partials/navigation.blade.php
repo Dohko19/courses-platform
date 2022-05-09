@@ -7,7 +7,7 @@
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
-            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbarContent" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -24,7 +24,8 @@
                        <a href="#"
                           class="nav-link dropdown-toggle"
                           id="navbarDropdownMenuLink"
-                          data-toggle="dropdown"
+                          data-toggle="dropdown" 
+                          data-bs-toggle="dropdown"
                           aria-expanded="false"
                           aria-haspopup="true"
                        >

@@ -74,4 +74,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(UserSocialAccount::class);
     }
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
 }
