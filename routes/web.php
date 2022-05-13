@@ -10,9 +10,7 @@ Route::get('set_language/{lang}', [Controller::class, 'setLanguage'])->name('set
 Route::get('login/{driver}', [LoginController::class, 'redirectToProvider'])->name('social_auth');
 Route::get('login/{driver}/callback', [LoginController::class, 'handleProviderCallback']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 
 Auth::routes();
