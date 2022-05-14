@@ -32,7 +32,8 @@
                 </div>
             @endif
         <main class="py-4">
-            
+            <stripe-form></stripe-form>
+
             @yield('content')
         </main>
     </div>
