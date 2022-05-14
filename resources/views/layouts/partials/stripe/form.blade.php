@@ -4,9 +4,9 @@
     <input type="hidden" name="type" value="{{ $product['type'] }}">
     <hr>
     <stripe-form
-        stripe-key="{{ env('STRIPE_KEY') }}"
+        stripe_key="{{ env('STRIPE_KEY') }}"
         name="{{ $product['name'] }}"
-        mount="{{ $product['amount'] }}"
+        amount="{{ $product['amount'] }}"
         description="{{ $product['description'] }}"
     ></stripe-form>
 </form>

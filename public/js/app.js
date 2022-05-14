@@ -5701,7 +5701,7 @@ __webpack_require__.r(__webpack_exports__);
     description: ''
   },
   computed: {
-    producto: function producto() {
+    product: function product() {
       return {
         name: this.name,
         amount: parseFloat(this.amount),
@@ -43914,7 +43914,7 @@ var render = function () {
     attrs: {
       button: "Suscribirme",
       "button-class": "btn btn-course",
-      "stripe-key": _vm.stripe_key,
+      stripeKey: _vm.stripe_key,
       product: _vm.product,
     },
   })

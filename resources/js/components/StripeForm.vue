@@ -2,7 +2,7 @@
     <stripe-checkout
         button="Suscribirme"
         button-class="btn btn-course"
-        :stripe-key="stripe_key"
+        :stripeKey="stripe_key"
         :product="product"
     >
     </stripe-checkout>
@@ -22,7 +22,7 @@ export default {
         description: '',
     },
     computed: {
-      producto() {
+      product() {
           return {
               name: this.name,
               amount: parseFloat(this.amount),
