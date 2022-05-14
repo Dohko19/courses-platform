@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\SubscriptionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CourseController;
@@ -18,5 +19,12 @@ Auth::routes();
 Route::prefix('courses')->group(function () {
     Route::get('{course}', [CourseController::class, 'show'])->name('courses.detail');
 });
+
+Route::prefix('subscription')->group(function () {
+    Route::get('/plans', [SubscriptionController::class, 'plans'])->name('subscription.plans');
+    Route::post('/process_subscription', [SubscriptionController::class, 'processSubscription'])->name('subscription.process_subscription');
+});
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

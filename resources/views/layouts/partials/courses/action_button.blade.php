@@ -3,7 +3,7 @@
         @can('opt_for_course', $course)
             @can('subscribe', \App\Models\Course::class)
                 <div class="d-grid gap-2">
-                    <a href="#" class="btn btn-subscribe btn-">
+                    <a href="{{ route('subscription.plans') }}" class="btn btn-subscribe btn-">
                         <i class="fa fa-bolt"> {{ __("Subscribirme y acceder") }}</i>
                     </a>
                 </div>
