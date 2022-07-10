@@ -21,8 +21,25 @@ class SubscriptionController extends Controller
         return view('subscriptions.plans');
     }
 
-    public function processSubscription()
+    public function processSubscription(Request $request)
     {
-
+        $token = $request->get('stripeToken');
+        try{
+            if ($request->has('coupon')){
+                $request->user()
+                    ->newSubscription('main', $request->get('type'))
+                    ->withCoupon($request->get('coupon'))
+                    ->create($token)
+                ;
+            }else{
+                $request->user()
+                    ->newSubscription('main', $request->get('type'))
+                    ->create($token)
+                ;
+            }
+        }catch (\Exception $exception){
+            $error = $exception->getMessage();
+            return back()->with('message', ['danger', $error]);
+        }
     }
 }
