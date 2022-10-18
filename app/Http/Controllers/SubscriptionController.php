@@ -37,9 +37,16 @@ class SubscriptionController extends Controller
                     ->create($token)
                 ;
             }
+            return redirect(route('subscription.admin'))->with('message', ['success', __("La suscripcion se ha llevado acabo correctamente")]);
         }catch (\Exception $exception){
             $error = $exception->getMessage();
             return back()->with('message', ['danger', $error]);
         }
+    }
+
+    public function admin()
+    {
+        $subscriptions = auth()->user()->subscriptions;
+        return view('subscriptions.admin', compact('subscriptions'));
     }
 }
