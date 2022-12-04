@@ -1,16 +1,17 @@
 <div class="col-2">
     @auth
         @can('opt_for_course', $course)
-            @can('subscribe', \App\Models\Course::class)
+
+            {{-- @can('subscribe', \App\Models\Course::class)
                 <div class="d-grid gap-2">
                     <a href="{{ route('subscription.plans') }}" class="btn btn-subscribe btn-">
                         <i class="fa fa-bolt"> {{ __("Subscribirme y acceder") }}</i>
                     </a>
                 </div>
-            @else
+            @else --}}
                 @can('inscribe', $course)
                     <div class="d-grid gap-2">
-                        <a href="#" class="btn btn-subscribe btn-">
+                        <a href="{{ route('courses.inscribe', $course) }}" class="btn btn-subscribe btn-">
                             <i class="fa fa-bolt"> {{ __("Inscribirme") }}</i>
                         </a>
                     </div>
@@ -21,7 +22,7 @@
                         </a>
                     </div>
                 @endcan
-            @endcan
+            {{-- @endcan --}}
         @else
             <div class="d-grid gap-2">
                 <a href="#" class="btn btn-subscribe btn-">

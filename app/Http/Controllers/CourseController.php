@@ -29,4 +29,10 @@ class CourseController extends Controller
         $related = $course->relatedCourses();
         return view('courses.detail', compact('course', 'related'));
     }
+
+    public function inscribe(Course $course)
+    {
+        $course->students()->attach( auth()->user()->student->id );
+        return back()->with('message', ['success', __("Inscrito al curso correctamente")]);
+    }
 }

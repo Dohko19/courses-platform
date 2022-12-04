@@ -44,7 +44,7 @@
                                 <form action="{{ route('subscriptions.cancel') }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="plan" value="{{ $sub->name }}">
-                                    <button class="btn btn-success">
+                                    <button class="btn btn-danger">
                                         {{ __("Cancelar") }}
                                     </button>
                                 </form>
